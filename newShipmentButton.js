@@ -1,3 +1,5 @@
+ // IMPORTANT: Test your code before adding the dialog. Dialogs cannot run in the editor. It runs ONLY when user action is present from sheets.
+
 var spreadsheet = SpreadsheetApp.getActive();
 var displayTackerSheet = spreadsheet.setActiveSheet(spreadsheet.getSheetByName('Pixel Display Tracker'), true);
 
