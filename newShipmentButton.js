@@ -39,20 +39,28 @@ function addNewShipment() {
 }
 
 /* Created an alert for the user to avoid spams and to confirm the current shipment is done.
-  * The user cannot add a new shipment until all display stock has been used and DOAs reported.
+ * The user cannot add a new shipment until all display stock has been used and DOAs reported.
+ * 
+ * There was an issue when a new template was added, the user would be able to bypass "current shipment is done" check.
+ * This nasty bug has been removed successfully by adding new checks to see if the template format is present in a unique way.
+ * Now the user will get a new alert stating "You just added a new shipment" if the template format is present.
 */ 
 function displaysVerification() {
-
   var displayStockValue = displayTrackerSheet.getRange('H' + lastRow).getValue();
-  var doaReportChecked = displayTrackerSheet.getRange('J' + lastRow).getDisplayValue();
-  var countedFor = displayTrackerSheet.getRange('E' + lastRow).getDisplayValue();
+  var doaReportCheckBox = displayTrackerSheet.getRange('J' + lastRow).getDisplayValue();
+  var acountedFor = displayTrackerSheet.getRange('E' + lastRow).getDisplayValue();
+  var acountedFor2 = displayTrackerSheet.getRange('B' + lastRow).getDisplayValue();
+  
+  if (acountedFor2 == "Name/Order#" || acountedFor2 == "" && doaReportCheckBox == "TRUE" || doaReportCheckBox == "FALSE" && acountedFor < displayStockValue ) {
+      cannotAddIfTemplateAlert();
+      displayTrackerSheet.getRange('J' + lastRow).setValue("FALSE")
 
-  if (doaReportChecked == "FALSE" || doaReportChecked == "TRUE" && displayStockValue != 0 && countedFor >= 5) {
+  } else if (doaReportCheckBox == "FALSE" || doaReportCheckBox == "TRUE" && displayStockValue != 0 && acountedFor >= 0) {
     cannotAddShipmentAlert();
     displayTrackerSheet.getRange('J' + lastRow).setValue("FALSE")
   } else {
       confirmAddShipmentAlert();
-    }
+  }
 }
 
 // Created an alert for the user to confirm adding a new shipment after 'displaysVerification();' checks current shipment is done.
@@ -77,4 +85,8 @@ function cannotAddShipmentAlert() {
   ui.alert('Cannot add shipment','Please use all the display stock and make sure DOAs are reported.', ui.ButtonSet.OK);
 }
 
+function cannotAddIfTemplateAlert() {
+  var ui = SpreadsheetApp.getUi();
+  ui.alert('Cannot add shipment','You just added a new shipment.', ui.ButtonSet.OK);
+}
 
