@@ -1,5 +1,5 @@
 var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-var displayTrackerSheet = spreadsheet.getSheetByName("menues and elements");
+var displayTrackerSheet = spreadsheet.getSheetByName("Pixel Display Tracker");
 // This is the key to finding the last row of your sheet. Use logger to see what your last row is.
 var lastRow = displayTrackerSheet.getLastRow();
 
