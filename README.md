@@ -11,7 +11,7 @@
   <li> An alert for the user to confirm adding a new shipment only after current shipment is done.  </li>
   <p></p>
   <li> A check to see if the template format is present. 
-      Now the user will get a new alert stating "You just added a new shipment" if the template format is present. </li>
+      Now the user will get a new alert stating "You just added a new shipment" if they try adding a new shipment immediately . </li>
 </ul>
 
 <p align="center">
