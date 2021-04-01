@@ -9,7 +9,8 @@
   <li> A check on the current shipment. An alert is shown to the user if the current shipment is not done. The user cannot add a new shipment until all the display stock has been used and all DOAs reported.</li>
   <p></p>
   <li> An alert for the user to confirm adding a new shipment only after current shipment is done.  </li>
-   <li> A check to see if the template format is present. 
+  <p></p>
+  <li> A check to see if the template format is present. 
       Now the user will get a new alert stating "You just added a new shipment" if the template format is present. </li>
 </ul>
 
