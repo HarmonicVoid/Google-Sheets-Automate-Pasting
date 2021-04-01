@@ -21,7 +21,7 @@ function addNewShipment() {
 
   // Make sure to use loggers to see what number the method 'lastRow();' gives you.
   // IMPORTANT: Test your code before adding the dialog. Dialogs cannot run in the editor. It runs ONLY when user action is present from sheets.
-  Logger.log("First Group = " + firstGroupSelection);
+  Logger.log("First Group = " + lastRow);
   Logger.log("Second Group = " + secondGroupSelection);
   Logger.log("beginGrouping = " + beginGrouping);
 
@@ -76,4 +76,5 @@ function cannotAddShipmentAlert() {
   var ui = SpreadsheetApp.getUi();
   ui.alert('Cannot add shipment','Please use all the display stock and make sure DOAs are reported.', ui.ButtonSet.OK);
 }
+
 
