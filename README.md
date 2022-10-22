@@ -12,6 +12,8 @@
   <p></p>
   <li> A check to see if the template format is present. 
       Now the user will get a new alert stating "You just added a new shipment" if they try adding a new shipment immediately . </li>
+   <p></p>
+  <li> OVERRIDE option to add a new shipment without a check on the current shipment. </li>
 </ul>
 
 <p align="center">
