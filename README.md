@@ -1,7 +1,7 @@
 <h1 align="center">Google Sheets Paste to Next Row</h1>
 <h2>Automate pasting cells with a click of a button!</h2>
-<P>The script automatically finds the last row and groups cells together. You can paste as many new "shipments" or own templates easily.
-   This works great with a user that does not know how to use Sheets. You can have piece of mind now.</p>
+<P>The script automatically finds the last row and groups cells together. You can paste as many new "shipments" or your own templates easily.
+   This works great with a user that does not know how to use sheets. You can have a piece of mind now.</p>
 
 <h2>Features</h2>
 
